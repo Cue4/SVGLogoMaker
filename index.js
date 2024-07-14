@@ -1,72 +1,77 @@
-const inquirer = require("inquirer");
-const path = require("path");
-const fs = require("fs");
-const generateLogo = require("./lib/shapes.js");
+const inquirer = require('inquirer');
+const path = require('path');
+const fs = require('fs');
+const generateLogo = require('./lib/shapes.js');
 
+const questions = [
+    {
+      type:'input',
+      name: 'text',
+      message: 'Enter up to 3 characters for your logo'
+    }, 
+    {
+      type: 'input',
+      name: 'text-color',
+      message: 'Enter a color keyword or hexadecimal number'
+    },
+    {
+      type: 'checkbox', 
+      name: 'shape',
+      message: 'Which shape would you like your log to have?:',
+      choices:
+      [
+        'Circle',
+        'Square',
+        'Triangle'
+      ]
+    },
+    {
+      type:'input',
+      name:'shape-color',
+      message:'Enter a color keyword or hexadecimal number'
+    }
+  ];
 
-
-
-
-
-
-
-
-
-
+function writeToLog(data) {
+  fs.writeFile('logo.svg', data, (err) => {
+      if (err) {
+        console.error(err);
+  } else {
+    console.log('Generated logo.svg!')
+  }
+  });
+}
+const promptUser = (questions) =>
+  inquirer(questions)
+    .then((answers) => {
+      console.log('Answers:', answers);
+      return answers;
+    })
+    .catch((error) => {
+      console.error('An error occurred:', error);
+    });
 // function promptUser(questions) {
 //   return inquirer.prompt(questions)
 //     .then((answers) => {
 //       console.log('Answers:', answers);
-//       // You can process the answers here or return them for further processing
 //       return answers;
 //     })
 //     .catch((error) => {
 //       console.error('An error occurred:', error);
 //     });
 // }
+// Function to initialize app
+function init() {
+  promptUser(questions)
+  .then((data) => {
+    console.log(data);
+    const myData = generateLogo(data);
+    writeToFile(myData);
+});
+}
 
-// const questions = [
-//     {
-//       type:'input',
-//       name: 'text',
-//       message: 'Enter up to 3 characters for your logo'
-//     }, {
-//       type: 'input',
-//       name: 'text-color',
-//       message: 'Enter a color keyword or hexadecimal number'
-//     },
-//     {
-//     type: 'checkbox', 
-//     name: 'shape',
-//     message: 'Which shape would you like your log to have?:',
-//     choices:[
-//       'Circle',
-//       'Square',
-//       'Triangle'
-//     ]
-//     },
-//   {
-//     type:'input',
-//     name:'shape-color',
-//     message:'Enter a color keyword or hexadecimal number'
-//   }
-// ]
-
-//     .then((response) => {
-//       console.log(response);
-//       const myData = generateLogo(response);
-//       fs.writeFile(path.join(__dirname, 'logo.svg'), myData, (err) => {
-//         if (err) {
-//           console.error(err);
-//         } else {
-//           console.log('File written successfully.');
-//         }
-//       });
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
-
+// Function call to initialize app
+init();
 
 
 
@@ -99,14 +104,4 @@ const generateLogo = require("./lib/shapes.js");
     
 // }
 
-// Function to initialize app
-// function init() {
-//   inquirer.prompt(questions)
-//   .then((data) => {
-//     console.log(data);
-//     writeToFile("logo.svg", generatelogo({...data}) )
-// });
-// }
 
-// Function call to initialize app
-// init();
