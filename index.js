@@ -50,37 +50,19 @@ const questions = [
       message:'Enter a color keyword or hexadecimal number'
     }
   ];
-  // fs.writeFile('logo.svg' , render(), (err, res)=> {
-  //   err? console.error(err): console.log("Generated logo.svg!", res)
-  // })
 
-// const superCoolLogo = ()
+// let superCoolLogo = new Triangle();
 
-// superCoolLogo.setColor("")
-// superCoolLogo.setText("")
-// superCoolLogo.setTextColor("")
+//   superCoolLogo.setColor("")
+//   superCoolLogo.setText("")
+//   superCoolLogo.setTextColor("")
+  
+  
+//   fs.writeFile('logo.svg' , superCoolLogo.render(), (err, res)=> {
+//     err? console.error(err): console.log("logo created", res)
+//   })
 
-// function writeToFile(data) {
-// fs.writeFile('logo.svg' , render(), (err, res)=> {
-//   err? console.error(err): console.log("Generated logo.svg!", res)
-// })
-// }
 
-// function writeToFile(data) {
-//   fs.writeFile('logo.svg', data, (err) => {
-//       if (err) {
-//         console.error(err);
-//   } else {
-//     console.log('Generated logo.svg!')
-//   }
-//   });
-// }
-const writeToLog = (data) => {
-  fs.writeFile('logo.svg', data, (err) => {
-      err ? console.error(err) : console.log('Message Logged!')
-  })
-
-}
 
 
 // Function to write rendered SVG to a file2
@@ -125,7 +107,14 @@ const promptUser = (questions) =>
 function init() {
   promptUser(questions)
   .then((data) => {
-    console.log(data);
+    const svgContent = render(data);
+    fs.writeFile('logo.svg', svgContent, (err) => {
+      if (err) {
+        console.error(err);
+      }else {
+        console.log("Generated logo.svg!");
+      }
+    })
 });
 }
 
