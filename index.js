@@ -51,48 +51,6 @@ const questions = [
     }
   ];
 
-// let superCoolLogo = new Triangle();
-
-//   superCoolLogo.setColor("")
-//   superCoolLogo.setText("")
-//   superCoolLogo.setTextColor("")
-  
-  
-//   fs.writeFile('logo.svg' , superCoolLogo.render(), (err, res)=> {
-//     err? console.error(err): console.log("logo created", res)
-//   })
-
-
-
-
-// Function to write rendered SVG to a file2
-// function writeToFile(text) {
-//   const svgData = render(text); // Use the render function to prepare the data
-//   fs.writeFile('logo.svg', svgData, (err) => {
-//     if (err) {
-//       console.error(err);
-//     } else {
-//       console.log("Generated logo.svg!");
-//     }
-//   });
-// }
-
-
-// Start prompting the user
-// inquirer.prompt(questions)
-//     .then(answers => {
-//         const svgContent = render(answers);
-//         fs.writeFile('logo.svg', svgContent, err => {
-//             if (err) {
-//                 console.error(err);
-//             } else {
-//                 console.log("Generated logo.svg!");
-//             }
-//         });
-//     })
-//     .catch(error => {
-//         console.error("Error during prompts:", error);
-//     });
 const promptUser = (questions) =>
   inquirer.prompt(questions)
     .then((answers) => {
