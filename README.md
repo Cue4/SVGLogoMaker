@@ -22,7 +22,7 @@ Install dependencies - inquirer, fs, jest
     
 ## Usage
 
-
+https://drive.google.com/file/d/1BP10fGObAuqALeyGjEa4DHccSDMtnoY4/view
 
 ## License
 
@@ -47,6 +47,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 ## Badges
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
@@ -60,3 +61,7 @@ Xpert Learning Assistant
 Extension in VScode named PHIND
 
 edX Boot Camps: OSU GitLab Files
+
+CONTACT ME:
+Caliphferguson@gmail.com
+https://github.com/Cue4

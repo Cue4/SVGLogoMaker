@@ -15,10 +15,10 @@ function render(answers) {
       shapeElement = new Triangle(shapeColor);
   }
 
-  return `
-      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  return`
+      <svg>
           ${shapeElement.render()}
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${textColor}" font-size="24">${text}</text>
+          
       </svg>
   `;
 }
@@ -68,7 +68,7 @@ function init() {
     const svgContent = render(data);
     fs.writeFile('logo.svg', svgContent, (err) => {
       if (err) {
-        console.error(err);
+        console.error("Error writing file:", err);
       }else {
         console.log("Generated logo.svg!");
       }

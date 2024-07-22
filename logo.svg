@@ -1,6 +1,15 @@
 
-      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <svg>
+          
+        <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  
+        <rect x="50" y="50" width="200" height="200" fill="undefined"/>
+        
       
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="undefined" font-size="24">rue</text>
+        <text x="150" y="150" font-size="60" text-anchor="middle" fill="undefined">undefined</text>
+      
+      </svg>
+            
+          
       </svg>
   
